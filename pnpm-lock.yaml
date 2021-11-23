@@ -25,8 +25,10 @@ importers:
       eslint-config-prettier: 8.3.0
       eslint-plugin-eslint-comments: 3.2.0
       husky: 7.0.4
+      jsonc-parser: ^3.0.0
       lerna: 4.0.0
       lint-staged: 11.2.0
+      lodash: ^4.17.21
       mocha: ^9.1.2
       npm-run-all: 4.1.5
       nyc: ^15.1.0
@@ -36,6 +38,8 @@ importers:
       shx: ^0.3.3
       sinon: ^11.1.2
       typescript: ^4.4.3
+      vfile: 4.2.1
+      vfile-location: 3.2.0
       vsce: 1.100.1
     devDependencies:
       '@commitlint/cli': 13.2.0
@@ -56,8 +60,10 @@ importers:
       eslint-config-prettier: 8.3.0_eslint@7.30.0
       eslint-plugin-eslint-comments: 3.2.0_eslint@7.30.0
       husky: 7.0.4
+      jsonc-parser: 3.0.0
       lerna: 4.0.0
       lint-staged: 11.2.0
+      lodash: 4.17.21
       mocha: 9.1.3
       npm-run-all: 4.1.5
       nyc: 15.1.0
@@ -67,6 +73,8 @@ importers:
       shx: 0.3.3
       sinon: 11.1.2
       typescript: 4.4.4
+      vfile: 4.2.1
+      vfile-location: 3.2.0
       vsce: 1.100.1
 
   examples/sample-action-client:
@@ -84,7 +92,7 @@ importers:
   packages/app-studio-toolkit:
     specifiers:
       '@sap-devx/app-studio-toolkit-types': ^1.3.1
-      '@sap/artifact-management': 1.1.0
+      '@sap/artifact-management': 1.1.1
       '@types/lodash': ^4.14.168
       '@types/proxyquire': 1.3.28
       '@vscode-logging/types': 0.1.4
@@ -99,7 +107,7 @@ importers:
       webpack: 5.61.0
       webpack-cli: 4.9.1
     dependencies:
-      '@sap/artifact-management': 1.1.0
+      '@sap/artifact-management': 1.1.1
       '@vscode-logging/wrapper': 1.0.1
       lodash: 4.17.21
     devDependencies:
@@ -118,17 +126,13 @@ importers:
 
   packages/app-studio-toolkit-types:
     specifiers:
-      '@sap/artifact-management-base-types': 1.1.0
-      '@sap/artifact-management-types': 1.1.0
+      '@sap/artifact-management-types': 1.1.1
       '@types/vscode': ^1.49.0
       '@vscode-logging/types': 0.1.4
-      patch-package: 6.4.7
     dependencies:
-      '@sap/artifact-management-base-types': 1.1.0
-      '@sap/artifact-management-types': 1.1.0
+      '@sap/artifact-management-types': 1.1.1
       '@types/vscode': 1.61.0
       '@vscode-logging/types': 0.1.4
-      patch-package: 6.4.7
 
 packages:
 
@@ -1459,17 +1463,17 @@ packages:
     hasBin: true
     dev: false
 
-  /@sap/artifact-management-base-types/1.1.0:
-    resolution: {integrity: sha512-w33XCD23sYsrgk6zzhMYdPH7IRSE1eVOxnL5C07wzNdzd6nzxFdoALSqWLRL5/XvB8On2lGsfoL5SvIauIV4oA==}
+  /@sap/artifact-management-base-types/1.1.2:
+    resolution: {integrity: sha512-Uw+fNlPGmp/9ikWzLzBZar8eNX55sLMu3ekxc2B43CVqrZZJfqmSomtR9a8FFO3qnOHWw91ptZHGiUwdvN96Mw==}
     dev: false
 
-  /@sap/artifact-management-base/1.1.0:
-    resolution: {integrity: sha512-d9hAKOasGLGXOSl5jN6cTunoOGpNjlXS0cQz+H7wC2rPdBGgN81xocvjWRMQIdwvEcZhItGjrpVID1B77fHawQ==}
+  /@sap/artifact-management-base/1.1.1:
+    resolution: {integrity: sha512-KkMJjrpPwBwGhCzLWtpKCEN0Txo3zEy9oRU3Gw3M9ryPMINiewcAgP2FSRoeXtk0AJVcLE6ZdYP9DmAWBsijMg==}
     dependencies:
       ajv: 7.0.3
       arg: 5.0.0
       async: 3.2.0
-      chokidar: 3.5.1
+      chokidar: 3.5.2
       ejs: 3.1.6
       fast-glob: 3.2.5
       glob: 7.1.6
@@ -1488,15 +1492,18 @@ packages:
       yargs: 16.2.0
     dev: false
 
-  /@sap/artifact-management-types/1.1.0:
-    resolution: {integrity: sha512-N8ijYsG9TruFS1aIkoJw/nBcwyb/AO4nATeokqgCuEUASijVYmtRqsLmvgU0zwA1FIctEY3duTCTHd8rq7yU5w==}
+  /@sap/artifact-management-types/1.1.1:
+    resolution: {integrity: sha512-pKRHFjrH2iZfBNOqyQ75uMew175meJkvOu60qGx6xoUTHbuqOP0QpUede6qY+tU3u5vDPHCMa8jBVEHPZn3k7g==}
+    dependencies:
+      '@sap/artifact-management-base-types': 1.1.2
     dev: false
 
-  /@sap/artifact-management/1.1.0:
-    resolution: {integrity: sha512-FmCLt701pPRG363Fs022/caWilFootewIEqXppKhe98XK6pb2NjogWew8aHJQAd+mlenEKG28XB2ucii/2xAGQ==}
+  /@sap/artifact-management/1.1.1:
+    resolution: {integrity: sha512-W/GEHMFgsDEcDzhWt7Vg5jNNulUZnc5XrZxA5bIA02nOwnS/8OkWc70ifJFwwhK0AJWH7FbulDkXMH8eovPrSg==}
     hasBin: true
     dependencies:
-      '@sap/artifact-management-base': 1.1.0
+      '@sap/artifact-management-base': 1.1.1
+      '@sap/artifact-management-base-types': 1.1.2
       '@sap/artifact-management-mdkplugin': /pre-bundled/2.2.1
       ajv: 7.0.3
       arg: 5.0.0
@@ -1624,6 +1631,10 @@ packages:
     resolution: {integrity: sha512-6EF+wzMWvBNeGrfP3Nx60hhx+FfwSg1JJBLAAP/IdIUq0EYkqCYf70VT3PhuhPX9eLD+Dp+lNdpb/ZeHG8Yezg==}
     dependencies:
       '@sinonjs/fake-timers': 7.1.2
+    dev: true
+
+  /@types/unist/2.0.6:
+    resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: true
 
   /@types/vscode/1.61.0:
@@ -1914,6 +1925,7 @@ packages:
 
   /@yarnpkg/lockfile/1.1.0:
     resolution: {integrity: sha512-GpSwvyXOcOOlV70vbnzjj4fW5xW/FdUF6nQEt1ENy7m4ZCczi1+/buVUPAqmGfqznsORNFzUMjctTIp8a9tuCQ==}
+    dev: true
 
   /JSONStream/1.3.5:
     resolution: {integrity: sha512-E+iruNOY8VV9s4JEbe1aNEm6MiszPRr/UfcHMz0TQh1BXSxHK+ASV1R6W4HpjBhSeS+54PIsAMCBmwD06LLsqQ==}
@@ -2420,21 +2432,6 @@ packages:
       tslib: 2.3.1
     dev: true
 
-  /chokidar/3.5.1:
-    resolution: {integrity: sha512-9+s+Od+W0VJJzawDma/gvBNQqkTiqYTWLuZoyAsivsI4AaWTCzHG06/TMjsf1cYe9Cb97UCEhjz7HvnPk2p/tw==}
-    engines: {node: '>= 8.10.0'}
-    dependencies:
-      anymatch: 3.1.2
-      braces: 3.0.2
-      glob-parent: 5.1.2
-      is-binary-path: 2.1.0
-      is-glob: 4.0.3
-      normalize-path: 3.0.0
-      readdirp: 3.5.0
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: false
-
   /chokidar/3.5.2:
     resolution: {integrity: sha512-ekGhOnNVPgT77r4K/U3GDhu+FQ2S8TnK/s2KbIGXi0SZWuwkZ2QNyfWdZW+TVfn84DpEP7rLeCt2UI6bJ8GwbQ==}
     engines: {node: '>= 8.10.0'}
@@ -2465,6 +2462,7 @@ packages:
 
   /ci-info/2.0.0:
     resolution: {integrity: sha512-5tK7EtrZ0N+OLFMthtqOj4fI2Jeb88C4CAZPu25LDVUgXJ0A3Js4PMGqrn0JU1W0Mh1/Z8wZzYPxqUrXeBboCQ==}
+    dev: true
 
   /clean-stack/2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
@@ -2846,6 +2844,7 @@ packages:
       semver: 5.7.1
       shebang-command: 1.2.0
       which: 1.3.1
+    dev: true
 
   /cross-spawn/7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
@@ -3621,6 +3620,7 @@ packages:
     resolution: {integrity: sha512-1IMnbjt4KzsQfnhnzNd8wUEgXZ44IzZaZmnLYx7D5FZlaHt2gW20Cri8Q+E/t5tIj4+epTBub+2Zxu/vNILzqQ==}
     dependencies:
       micromatch: 4.0.4
+    dev: true
 
   /findup-sync/4.0.0:
     resolution: {integrity: sha512-6jvvn/12IC4quLBL1KNokxC7wWTvYncaVUYSoxWw7YykPLuRrnv4qdHcSOywOI5RpkOVGeQRtWM8/q+G6W6qfQ==}
@@ -3694,6 +3694,7 @@ packages:
       graceful-fs: 4.2.8
       jsonfile: 4.0.0
       universalify: 0.1.2
+    dev: true
 
   /fs-extra/8.1.0:
     resolution: {integrity: sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==}
@@ -3932,6 +3933,7 @@ packages:
       minimatch: 3.0.4
       once: 1.4.0
       path-is-absolute: 1.0.1
+    dev: true
 
   /global-dirs/0.1.1:
     resolution: {integrity: sha1-sxnA3UYH81PzvpzKTHL8FIxJ9EU=}
@@ -4331,6 +4333,11 @@ packages:
       has-tostringtag: 1.0.0
     dev: true
 
+  /is-buffer/2.0.5:
+    resolution: {integrity: sha512-i2R6zNFDwgEHJyQUtJEk0XFi1i0dPFn/oqjK3/vPCcDeJvW5NQ83V8QbicfF1SupOaB0h8ntgBC2YiE7dfyctQ==}
+    engines: {node: '>=4'}
+    dev: true
+
   /is-callable/1.2.4:
     resolution: {integrity: sha512-nsuwtxZfMX67Oryl9LCQ+upnC0Z0BgpwntpS89m1H/TLF0zNfzfLMV/9Wa/6MZsj0acpEjAO0KF1xT6ZdLl95w==}
     engines: {node: '>= 0.4'}
@@ -4341,6 +4348,7 @@ packages:
     hasBin: true
     dependencies:
       ci-info: 2.0.0
+    dev: true
 
   /is-core-module/2.8.0:
     resolution: {integrity: sha512-vd15qHsaqrRL7dtH6QNuy0ndJmRDrS9HAM1CAiSifNUFv4x1a0CCVsj18hJ1mShxIG6T2i1sO78MkP56r0nYRw==}
@@ -4359,6 +4367,7 @@ packages:
     resolution: {integrity: sha512-F+i2BKsFrH66iaUFc0woD8sLy8getkwTwtOBjvs56Cx4CgJDeKQeqfz8wAYiSb8JOprWhHH5p77PbmYCvvUuXQ==}
     engines: {node: '>=8'}
     hasBin: true
+    dev: true
 
   /is-extglob/2.1.1:
     resolution: {integrity: sha1-qIwCU1eR8C7TfHahueqXc8gz+MI=}
@@ -4519,6 +4528,7 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       is-docker: 2.2.1
+    dev: true
 
   /isarray/0.0.1:
     resolution: {integrity: sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=}
@@ -4529,6 +4539,7 @@ packages:
 
   /isexe/2.0.0:
     resolution: {integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=}
+    dev: true
 
   /isobject/3.0.1:
     resolution: {integrity: sha1-TkMekrEalzFjaqH5yNHMvP2reN8=}
@@ -4702,6 +4713,10 @@ packages:
       minimist: 1.2.5
     dev: true
 
+  /jsonc-parser/3.0.0:
+    resolution: {integrity: sha512-fQzRfAbIBnR0IQvftw9FJveWiHp72Fg20giDrHz6TdfB12UH/uue0D3hm57UB5KgAVuniLMCaS8P1IMj9NR7cA==}
+    dev: true
+
   /jsonfile/4.0.0:
     resolution: {integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=}
     optionalDependencies:
@@ -4742,6 +4757,7 @@ packages:
     resolution: {integrity: sha512-nIeuVSzdCCs6TDPTqI8w1Yre34sSq7AkZ4B3sfOBbI2CgVSB4Du4aLQijFU2+lhAFCwt9+42Hel6lQNIv6AntQ==}
     dependencies:
       graceful-fs: 4.2.8
+    dev: true
 
   /kuler/2.0.0:
     resolution: {integrity: sha512-Xq9nH7KlWZmXAtodXDDRE7vs6DU1gTU8zYDHDiWLSip45Egwq3plLHzPn27NgvzL2r1LMPC1vdqh98sQxtqj4A==}
@@ -5404,6 +5420,7 @@ packages:
 
   /nice-try/1.0.5:
     resolution: {integrity: sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==}
+    dev: true
 
   /nise/5.1.0:
     resolution: {integrity: sha512-W5WlHu+wvo3PaKLsJJkgPup2LrsXCcm7AWwyNZkUnn5rwPkuPBi3Iwk5SQtN0mv+K65k7nKKjwNQ30wg3wLAQQ==}
@@ -5765,6 +5782,7 @@ packages:
     dependencies:
       is-docker: 2.2.1
       is-wsl: 2.2.0
+    dev: true
 
   /optional-require/1.0.3:
     resolution: {integrity: sha512-RV2Zp2MY2aeYK5G+B/Sps8lW5NHAzE5QClbFP15j+PWmP+T9PxlJXBOOLoSAdgwFvS4t0aMR4vpedMkbHfh0nA==}
@@ -5791,6 +5809,7 @@ packages:
   /os-tmpdir/1.0.2:
     resolution: {integrity: sha1-u+Z0BseaqFxc/sdm/lc0VV36EnQ=}
     engines: {node: '>=0.10.0'}
+    dev: true
 
   /osenv/0.1.5:
     resolution: {integrity: sha512-0CWcCECdMVc2Rw3U5w9ZjqX6ga6ubk1xDVKxtBQPK7wis/0F2r9T6k4ydGYhecl7YUBxBVxhL5oisPsNxAPe2g==}
@@ -6037,6 +6056,7 @@ packages:
       semver: 5.7.1
       slash: 2.0.0
       tmp: 0.0.33
+    dev: true
 
   /patch-text/1.0.2:
     resolution: {integrity: sha1-S/NuZeUXM9bpjwz2LgkDTaoDSKw=}
@@ -6060,6 +6080,7 @@ packages:
   /path-key/2.0.1:
     resolution: {integrity: sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=}
     engines: {node: '>=4'}
+    dev: true
 
   /path-key/3.1.1:
     resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
@@ -6388,13 +6409,6 @@ packages:
       once: 1.4.0
     dev: true
 
-  /readdirp/3.5.0:
-    resolution: {integrity: sha512-cMhu7c/8rdhkHXWsY+osBhfSy0JikwpHK/5+imo+LpeasTF8ouErHrlYkwT0++njiyuDvc7OFY5T3ukvZ8qmFQ==}
-    engines: {node: '>=8.10.0'}
-    dependencies:
-      picomatch: 2.3.0
-    dev: false
-
   /readdirp/3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
@@ -6547,6 +6561,7 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.2.0
+    dev: true
 
   /rimraf/3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
@@ -6606,6 +6621,7 @@ packages:
   /semver/5.7.1:
     resolution: {integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==}
     hasBin: true
+    dev: true
 
   /semver/6.3.0:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
@@ -6642,6 +6658,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       shebang-regex: 1.0.0
+    dev: true
 
   /shebang-command/2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
@@ -6653,6 +6670,7 @@ packages:
   /shebang-regex/1.0.0:
     resolution: {integrity: sha1-2kL0l0DAtC2yypcoVxyxkMmO/qM=}
     engines: {node: '>=0.10.0'}
+    dev: true
 
   /shebang-regex/3.0.0:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
@@ -6714,6 +6732,7 @@ packages:
   /slash/2.0.0:
     resolution: {integrity: sha512-ZYKh3Wh2z1PpEXWr0MpSBZ0V6mZHAQfYevttO11c51CaWjGTaadiKZ+wVt1PbMlDV5qhMFslpZCemhwOK7C89A==}
     engines: {node: '>=6'}
+    dev: true
 
   /slash/3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
@@ -7247,6 +7266,7 @@ packages:
     engines: {node: '>=0.6.0'}
     dependencies:
       os-tmpdir: 1.0.2
+    dev: true
 
   /tmp/0.2.1:
     resolution: {integrity: sha512-76SUhtfqR2Ijn+xllcI5P1oyannHNHByD80W1q447gU3mp9G9PSpGdWmjUOHRDPiHYacIk66W7ubDTuPF3BEtQ==}
@@ -7463,6 +7483,12 @@ packages:
       imurmurhash: 0.1.4
     dev: true
 
+  /unist-util-stringify-position/2.0.3:
+    resolution: {integrity: sha512-3faScn5I+hy9VleOq/qNbAd6pAx7iH5jYBMS9I1HgQVijz/4mv5Bvw5iw1sC/90CODiKo81G/ps8AJrISn687g==}
+    dependencies:
+      '@types/unist': 2.0.6
+    dev: true
+
   /universal-user-agent/6.0.0:
     resolution: {integrity: sha512-isyNax3wXoKaulPDZWHQqbmIx1k2tb9fb3GGDBRxCscfYV2Ch7WxPArBsFEG8s/safwXTT7H4QGhaIkTp9447w==}
     dev: true
@@ -7528,6 +7554,26 @@ packages:
       assert-plus: 1.0.0
       core-util-is: 1.0.2
       extsprintf: 1.3.0
+    dev: true
+
+  /vfile-location/3.2.0:
+    resolution: {integrity: sha512-aLEIZKv/oxuCDZ8lkJGhuhztf/BW4M+iHdCwglA/eWc+vtuRFJj8EtgceYFX4LRjOhCAAiNHsKGssC6onJ+jbA==}
+    dev: true
+
+  /vfile-message/2.0.4:
+    resolution: {integrity: sha512-DjssxRGkMvifUOJre00juHoP9DPWuzjxKuMDrhNbk2TdaYYBNMStsNhEOt3idrtI12VQYM/1+iM0KOzXi4pxwQ==}
+    dependencies:
+      '@types/unist': 2.0.6
+      unist-util-stringify-position: 2.0.3
+    dev: true
+
+  /vfile/4.2.1:
+    resolution: {integrity: sha512-O6AE4OskCG5S1emQ/4gl8zK586RqA3srz3nfK/Viy0UPToBc5Trp9BVFb1u0CjsKrAWwnpr4ifM/KBXPWwJbCA==}
+    dependencies:
+      '@types/unist': 2.0.6
+      is-buffer: 2.0.5
+      unist-util-stringify-position: 2.0.3
+      vfile-message: 2.0.4
     dev: true
 
   /vsce/1.100.1:
@@ -7715,6 +7761,7 @@ packages:
     hasBin: true
     dependencies:
       isexe: 2.0.0
+    dev: true
 
   /which/2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
