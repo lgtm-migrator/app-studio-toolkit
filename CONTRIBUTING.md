@@ -15,7 +15,7 @@ This is managed automatically via https://cla-assistant.io/ pull request voter.
 
 ### pre-requisites
 
-- [pnpm](https://pnpm.io/installation#using-npm) > 6.x
+- [pnpm](https://pnpm.io/installation#using-npm) >= 7.x
 - A [Long-Term Support version](https://nodejs.org/en/about/releases/) of node.js
 - (optional) [commitizen](https://github.com/commitizen/cz-cli#installing-the-command-line-tool) for managing commit messages.
 
